@@ -15,7 +15,6 @@ RUN apk update \
 		libbz2 \
 		gd \
 		gettext \
-		libmcrypt \
 		libxslt \
 	&& apk add --no-cache --virtual .build-php \
 		$PHPIZE_DEPS \
@@ -33,7 +32,6 @@ RUN apk update \
 		xmlrpc-c-dev \
 		pcre-dev \
 		gettext-dev \
-		libmcrypt-dev \
 		libxslt-dev \
 	&& pecl install apcu-$APCU_VERSION \
 	&& docker-php-ext-enable apcu \
@@ -45,7 +43,7 @@ RUN apk update \
 		gd \
 		bz2 \
 		pdo pdo_mysql \
-		bcmath exif gettext mcrypt pcntl \
+		bcmath exif gettext pcntl \
 		soap sockets sysvsem sysvshm xmlrpc xsl zip \
 	&& apk del .build-php \
 	&& rm -f /usr/local/etc/php/conf.d/docker-php-ext-apc.ini \
