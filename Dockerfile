@@ -1,12 +1,12 @@
 #//----------------------------------------------------------------------------
 #// PHP7 FastCGI Server ( for KUSANAGI Runs on Docker )
 #//----------------------------------------------------------------------------
-FROM php:7.2.5-fpm-alpine3.7
+FROM php:7.2.8-fpm-alpine3.7
 MAINTAINER kusanagi@prime-strategy.co.jp
 
 # Environment variable
 ARG MYSQL_VERSION=10.1.32-r0
-ARG APCU_VERSION=5.1.11
+ARG APCU_VERSION=5.1.12
 ARG APCU_BC_VERSION=1.0.4
 
 RUN apk update \
